@@ -1,5 +1,13 @@
 <h1>{{ course.name }}</h1>
 <p>{{ course.description }}</p>
+
+<h3> Students:</h3>
+{% for student in courses.students.all %}
+    <p>{{student.name} {student.lastname}}</p>
+{% endfor %}
+
+
+
 <a href="{% url 'course_update' course.id %}">Edit</a>
 <a href="{% url 'course_delete' course.id %}">Delete</a>
 <a href="{% url 'course_list' %}">Back to list</a>
